@@ -7,15 +7,15 @@ module.exports = function makeExchange(currency) {
         return {};
     }
     var result = {};
-    var H = Math.floor(currency / 50);
+    const H = Math.floor(currency / 50);
     if (H > 0){result.H = H;}
-    var Q = Math.floor((currency - H * 50) / 25);
+    const Q = Math.floor((currency - H * 50) / 25);
     if (Q > 0){result.Q = Q;}
-    var D = Math.floor((currency - H * 50 - Q * 25) / 10);
+    const D = Math.floor((currency - H * 50 - Q * 25) / 10);
     if (D > 0){result.D = D;}
-    var N = Math.floor((currency - H * 50 - Q * 25 - D * 10) / 5);
+    const N = Math.floor((currency - H * 50 - Q * 25 - D * 10) / 5);
     if (N > 0){result.N = N;}
-    var P = Math.floor((currency - H * 50 - Q * 25 - D * 10 - N * 5) / 1);
+    const P = Math.floor((currency - H * 50 - Q * 25 - D * 10 - N * 5) / 1);
     if (P > 0){result.P = P;}
 
     return result;
